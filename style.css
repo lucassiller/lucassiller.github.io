@@ -66,32 +66,6 @@ header {
   flex-wrap: wrap;
   justify-content: center;
 }
-/* handles narrow pages */
-@media (max-width: 600px) {
-  .header-container {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .site-name {
-    margin-right: 0;
-    margin-left: -1rem;
-    text-align: center;
-    font-size: 1.8rem;
-    margin-bottom: 0.1rem;
-    margin-top: 0.25rem;
-  }
-
-  .nav-links {
-    justify-content: center;
-  }
-  
-  h2 {
-  font-weight: bold;
-  font-size: 26px;
-}
-  
-}
 
 /* navigation buttons */
 
@@ -124,8 +98,9 @@ header {
 
 .page {
   font-family: 'Roboto Mono', monospace; 
-  font-weight: 400;
-  line-height: 1.6;
+  font-weight: 450;
+  font-size: 1.2rem;
+  line-height: 1.5;
   flex-shrink: 0;
   scrollbar-width: none;
   -ms-overflow-style: none; 
@@ -135,10 +110,13 @@ header {
   overflow-y: overlay;
   padding: 2rem;
   color: #ece3d4;
+  scrollbar-color: #0af transparent;
 }
 
-.page {
-  scrollbar-color: #0af transparent;
+ h2 {
+  color: #d6c5a5;
+  font-weight: bold;
+  font-size: 1.5rem;
 }
 
 .page::-webkit-scrollbar {
@@ -199,3 +177,34 @@ header {
 .desc {
   text-align: left;
 }
+
+/* handles narrow pages */
+@media (max-width: 600px) {
+  .header-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .site-name {
+    margin-right: 0;
+    margin-left: -1rem;
+    text-align: center;
+    font-size: 1.8rem;
+    margin-bottom: 0.1rem;
+    margin-top: 0.25rem;
+  }
+
+  .nav-links {
+    justify-content: center;
+  }
+  
+  .page {
+    font-weight: 300;
+    font-size: 1.2rem;
+  }
+  
+  h2 {
+    font-size: 1.8rem;
+}
+}
+
