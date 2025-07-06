@@ -32,10 +32,37 @@ function goToPage(page) {
   slider.style.transform = `translateX(${-page * 100}vw)`;
 
   targetBgX = -page * window.innerWidth * 0.1;
-
+  
+  smoothScrollReset();
+    
   // update active button styling
   buttons.forEach(btn => btn.classList.remove('active'));
   buttons[page].classList.add('active');
+}
+
+// Used to reset the scroll position smoothly to the top
+function smoothScrollReset(duration = 1000) {
+  const scrollContainer = document.querySelector('.scroll-container');
+  const start = scrollContainer.scrollTop;
+  const end = 0;
+  let startTime = null;
+
+  function animateScroll(time) {
+    if (!startTime) startTime = time;
+    const elapsed = time - startTime;
+    
+    // determine t for lerping and use ease out function
+    const t = Math.min(elapsed / duration, 1); 
+    const easeT = 1 - (1 - t) * (1 - t);
+
+    scrollContainer.scrollTop = lerp(start, end, easeT);
+
+    if (t < 1) {
+      requestAnimationFrame(animateScroll);
+    }
+  }
+
+  requestAnimationFrame(animateScroll);
 }
 
 // Animate background position smoothly
