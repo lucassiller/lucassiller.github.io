@@ -1,38 +1,105 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <!--
-    If you are serving your web app in a path other than the root, change the
-    href value below to reflect the base path you are serving from.
-
-    The path provided below has to start and end with a slash "/" in order for
-    it to work correctly.
-
-    For more details:
-    * https://developer.mozilla.org/en-US/docs/Web/HTML/Element/base
-
-    This is a placeholder for base href that will be replaced by the value of
-    the `--base-href` argument provided to `flutter build`.
-  -->
-  <base href="/">
-
-  <meta charset="UTF-8">
-  <meta content="IE=Edge" http-equiv="X-UA-Compatible">
-  <meta name="description" content="Website of Lucas Siller">
-
-  <!-- iOS meta tags & icons -->
-  <meta name="apple-mobile-web-app-capable" content="yes">
-  <meta name="apple-mobile-web-app-status-bar-style" content="black">
-  <meta name="apple-mobile-web-app-title" content="Lucas Siller">
-  <link rel="apple-touch-icon" href="icons/Icon-192.png">
-
-  <!-- Favicon -->
-  <link rel="icon" type="image/png" href="favicon.png"/>
-
-  <title>Lucas Siller</title>
-  <link rel="manifest" href="manifest.json">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>&#6158; Lucas Siller</title> <!-- Trick 17: mongolian space character -->
+  <link rel="icon" href="img/favicon.ico" type="image/x-icon">
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <script src="flutter_bootstrap.js" async></script>
+  <div class="background-pattern"></div>
+
+  <header>
+    <div class="header-container">
+        <div class="site-name">lucas siller</div>
+        <nav class="nav-links">
+          <button data-page="0" class="nav-btn active">home</button>
+          <button data-page="1" class="nav-btn">projects</button>
+          <button data-page="2" class="nav-btn">resume</button>
+          <button data-page="3" class="nav-btn">contact</button>
+        </nav>
+    </div>
+  </header>
+
+  <div class="scroll-container">
+    <main id="slider-container">
+      <section class="page" id="about">
+        <div class="page-content">
+            <h2>greetings stranger! lucas here.</h2>
+            <br>
+            <p>I'm an aspiring software engineer and <strong>graphics programmer</strong> from Germany. Currently wrapping up my Master's in Computer Science at a TU9 university, with a spezialisation in <strong>computer graphics</strong>.
+            My research interests range from real-time 3D graphics to photorealistic rendering, and <i>everything</i> inbetween.</p>
+            <br>
+            <p>For as long as I can remember, video games have been a central part of my life, be it story-based games, open-world adventures or highly competitive shooters.
+            I naturally became interested in <b>game development</b> as well, including areas like game design, rendering, procedural animations, 3D modeling, and video game art.</p>
+            <br>
+            <p> Above all, buildings things that leave a lasting visual impression is what I strive for and I hope to share this journey with you here! </p>
+        </div>
+      </section>
+
+      <section class="page" id="projects">
+        <div class="page-content">
+            <h2>— projects —</h2>
+            <p>My projects will start to appear here soon™!
+        </div>
+      </section>
+      
+      <section class="page" id="cv">
+        <div class="page-content">
+            <h2> Education </h2>
+            <br>
+            <div class="entry">
+              <span class="date">2023–2026*</span>
+              <span class="desc">M.Sc. in Computer Science (*expected graduation date)</span>
+            </div>
+            <div class="entry">
+              <span class="date">2019–2023</span>
+              <span class="desc">B.Sc. in Computer Science</span>
+            </div>
+             <div class="entry">
+              <span class="date">2016-2019</span>
+              <span class="desc">High School Diploma (Abitur)</span>
+            </div>
+            <br>
+            <h2>Work Experience</h2>
+            <br>
+            <div class="entry">
+              <span class="date">2025–2026</span>
+              <span class="desc">Working Student at a Leading DAX 40 Software Company</span>
+            </div>
+            <div class="entry">
+              <span class="date">2022–2024</span>
+              <span class="desc">Student Research Assistant at a TU9 University</span>
+            </div>
+        </div>
+      </section>
+      
+      <section class="page" id="contact">
+        <div class="page-content">
+            <h2>contact me</h2>
+            <br>
+            <p>whether to collab or just to chat, feel free to reach out :)</p>
+            <p id="email-link"></p>
+            <script> <!-- Attempt to prevent bot-scraping of email addresses. -->
+              const user = "mail";
+              const domain = "lucassiller.de";
+              const email = `${user}@${domain}`;
+              
+              const link = document.createElement("a");
+              link.href = `mailto:${email}`;
+              link.textContent = email;
+              
+              link.style.color = "#0af";
+              link.style.textDecoration = "none"; 
+
+              document.getElementById("email-link").appendChild(link);
+            </script>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <script src="script.js"></script>
 </body>
 </html>
