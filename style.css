@@ -149,8 +149,8 @@ header {
   align-items: start;
   justify-content: center;  
   margin-bottom: 1em;
-  max-width: 800px; 
-  margin: 0 auto;
+  max-width: 900px; 
+  margin: 0.35em auto;
 }
 
 .date {
@@ -167,6 +167,10 @@ header {
   .header-container {
     flex-direction: column;
     align-items: center;
+  }
+  
+  h2 {
+    font-size: 1.7rem;
   }
 
   .site-name {
@@ -191,8 +195,17 @@ header {
     font-size: 1.2rem;
   }
   
-  h2 {
-    font-size: 1.7rem;
-}
+  .entry {
+    column-gap: 0.5rem;
+  }
+  
+  .date {
+    font-size: 1rem;
+  }
+  
+  .desc {
+    font-size: 1rem;
+  }
+
 }
 
