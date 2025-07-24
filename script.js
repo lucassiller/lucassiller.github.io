@@ -8,6 +8,8 @@ let targetPage = 0;
 
 // state variables for background animation
 let wiggleAngle = 0; // keeps track of incrementing angle to let the background appear to "breathe"
+let wiggleSizeX = 4;
+let wiggleSizeY = 10;
 let lastScrollY = 0;
 
 // coordinates of background
@@ -65,7 +67,6 @@ function smoothScrollReset(duration = 1000) {
   requestAnimationFrame(animateScroll);
 }
 
-// Animate background position smoothly
 function animate() {
     
   // get scroll for outer scroll contrainer
@@ -84,8 +85,8 @@ function animate() {
   bgY = lerp(bgY, targetBgY, bgSpeed);
 
   wiggleAngle += 0.01;
-  const wiggleX = Math.sin(wiggleAngle) * 1.5;
-  const wiggleY = Math.cos(wiggleAngle * 0.75) * 5;
+  const wiggleX = Math.sin(wiggleAngle) * wiggleSizeX;
+  const wiggleY = Math.cos(wiggleAngle * 0.69) * wiggleSizeY;
 
   bg.style.backgroundPosition = `${bgX + wiggleX}px ${bgY + wiggleY}px`;
 
